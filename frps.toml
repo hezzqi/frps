@@ -1,10 +1,9 @@
-bindAddr = "0.0.0.0"
-bindPort = 7000
-#kcpBindPort = 7000
-quicBindPort = 7000
+bindAddr = "0.0.0.0"  
+bindPort = 14000
+kcpBindPort = 14001
 
-vhostHTTPPort = 80
-vhostHTTPSPort = 443
+auth.method = "token"
+auth.token = "nn69JtgT00JrVC5t"
 
 transport.maxPoolCount = 2000
 transport.tcpMux = true
@@ -13,23 +12,22 @@ transport.tcpKeepalive = 7200
 transport.tls.force = false
 
 webServer.addr = "0.0.0.0"
-webServer.port = 7500
-webServer.user = "admin"
-webServer.password = "admin"
-webServer.pprofEnable = false
+webServer.port = 14002
+webServer.user = "o7NYiTX8"
+webServer.password = "ZtksIAUDlMnzBXjV"
+dashboardPwd = "ZtksIAUDlMnzBXjV"
 
-log.to = "./frps.log"
+vhostHTTPPort = 14003
+vhostHTTPSPort = 14004
+log.file = "/var/log/frps.log"
 log.level = "info"
-log.maxDays = 3
-log.disablePrintColor = false
+log.maxDays = 30
 
-auth.method = "token"
-auth.token = "12345678"
+
+maxPoolCount = 50
+tcpmuxHTTPConnectPort  = 14005
 
 allowPorts = [
-  { start = 10001, end = 50000 }
+    { start = 10000, end = 13999 }, 
+    { start = 14006, end = 60000 }, 
 ]
-
-maxPortsPerClient = 8
-udpPacketSize = 1500
-natholeAnalysisDataReserveHours = 168
